@@ -15,23 +15,22 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className="hidden md:flex">
-                            <MenuIcon sx={{ color: '#fff' }} />
-                        </IconButton>
 
-                        {/* <Typography className=" text-6xl"
 
-                            > BusTicket 2.0 </Typography> */}
-                        <button className="text-xl">BusTicket 2.0</button>
+                        <Typography className=" text-2xl " > BusTicket 2.0 </Typography>
 
-                        <Stack direction="row" spacing={2} >
+                        <Stack direction="row" spacing={2} className="hidden md:flex ml-auto" >
                             <Button sx={{ color: 'inherit' }}>Ana Sayfa</Button>
                             <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
                             <Button sx={{ color: 'inherit' }}>Biletler</Button>
                             <Button sx={{ color: 'inherit' }}>Seferler</Button>
                             <Button sx={{ color: 'inherit' }}>İletişim</Button>
+
                         </Stack>
-                         
+
+                        <IconButton className=" ml-auto sm:hidden">
+                            <MenuIcon sx={{ color: '#fff' }} />
+                        </IconButton>
                     </Toolbar>
                 </AppBar>
             </Box>
