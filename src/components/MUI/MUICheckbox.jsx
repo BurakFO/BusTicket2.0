@@ -23,7 +23,7 @@ const MUICheckbox = () => {
                     defaultValue="true"
                     value={tripType}
                     row
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                 >
                     <FormControlLabel
                         control={<Radio />}

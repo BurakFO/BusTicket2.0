@@ -1,6 +1,7 @@
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import React, { useState } from "react";
 import MUICheckbox from "./MUI/MUICheckbox";
+import MUISelect from "./MUI/MUISelect";
 
 
 const TicketInputForm = () => {
@@ -22,10 +23,13 @@ const TicketInputForm = () => {
             </div>
 
             {/* input form here  */}
-            <div className="absolute flex flex-col left-0 right-0 top-0 mt-80 mx-10 justify-center  bg-slate-500 " >
-                <h1 className="text-2xl text-white p-3">En uygun fiyatlı otobüs bileti BusTicket 2.0'da!</h1>
+            <div className="absolute flex flex-col left-0 right-0 top-0 mt-80 mx-10 sm:mx-80  px-2 sm:p-10 justify-center  bg-white" >
+                <h1 className="text-2xl text-slate-800 p-3">En uygun fiyatlı otobüs bileti BusTicket 2.0'da!</h1>
+                
+                <MUICheckbox />
 
-                <MUICheckbox/>
+                <MUISelect />
+
 
                 <div>
                     <div>nerden nereyte</div>
