@@ -1,14 +1,18 @@
 import { Button } from "@mui/material";
 import React from "react";
-
+import TicketInputForm from "../components/TicketInputForm"
 
 const HomePage = () => {
 
-    return(
+    return (
         <>
-            <h1>Welcome to Home Page</h1>
-            
-        </> 
+
+            <div className="">
+                <TicketInputForm />
+
+            </div>
+
+        </>
     )
 }
 
