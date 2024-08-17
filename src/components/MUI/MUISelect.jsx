@@ -6,10 +6,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import axios from "axios";
-import { Menu } from "@mui/material";
 
 
-const MUISelect = () => {
+
+const MUISelect = ({ typeOfSelect }) => {
 
     const [destinationCity, setDestinationCity] = useState("");
     const [cities, setCities] = useState([]);
@@ -19,6 +19,8 @@ const MUISelect = () => {
         setDestinationCity(e.target.value);
         alert("City has been changed => " + e.target.value)
     }
+
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,19 +40,47 @@ const MUISelect = () => {
 
     return (
         <>
-            <FormControl className="mx-9">
-                <InputLabel >Nereden</InputLabel>
-                <Select
-                    value={destinationCity}
-                    label="Nereden"
-                    onChange={handleChange}
-                >
-                    {cities.map(item => (
-                        <MenuItem value={item.name}>{item.name}</MenuItem>
-                    ))}
-                </Select>
+            {(() => {
+                switch (typeOfSelect) {
+                    case 'city':
+                        return (
+                            <FormControl className="w-full h-full">
+                                <InputLabel >Nereden</InputLabel>
+                                <Select
+                                    value={destinationCity}
+                                    label="Nereden"
+                                    onChange={handleChange}
+                                >
+                                    {/* //for ekle  */}
+                                    {cities.map(item => (
+                                        <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>
+                                    ))}
+                                </Select>
 
-            </FormControl>
+                            </FormControl>
+                        );
+
+                    case 'person':
+                        return (
+                            <FormControl className="w-full h-full">
+                                <InputLabel >Person</InputLabel>
+                                <Select
+                                    value={destinationCity}
+                                    label="Person"
+                                    onChange={handleChange}
+                                >
+                                    {/* //for ekle  */}
+                                    {cities.map(item => (
+                                        <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>
+                                    ))}
+                                </Select>
+
+                            </FormControl>
+                        );
+                    
+                }
+            })()}
+
 
         </>
     )
