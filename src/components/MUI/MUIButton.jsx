@@ -5,8 +5,8 @@ const MUIButton = ({ label, size, color }) => {
 
     return (
         <>
-            <div className="w-">
-                <Button variant="contained" className="w-full" >{label}</Button>
+            <div className="w-full">
+                <Button variant="contained" className="w-full" size={size} >{label}</Button>
 
             </div>
         </>

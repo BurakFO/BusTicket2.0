@@ -6,7 +6,14 @@ export default {
   ],
   important: '#root',
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        '21vh': '21vh',
+        '41vh': '41vh',
+        '50vh': '50vh',
+        '60vh': '60vh', // Diğer boyutlar eklenebilir
+      },
+    },
   },
   plugins: [],
 }

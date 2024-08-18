@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 
-const MUISelect = ({ typeOfSelect }) => {
+const MUISelect = ({ typeOfSelect, label }) => {
 
     const [destinationCity, setDestinationCity] = useState("");
     const [cities, setCities] = useState([]);
@@ -45,7 +45,7 @@ const MUISelect = ({ typeOfSelect }) => {
                     case 'city':
                         return (
                             <FormControl className="w-full h-full">
-                                <InputLabel >Nereden</InputLabel>
+                                <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
                                     label="Nereden"
@@ -63,7 +63,7 @@ const MUISelect = ({ typeOfSelect }) => {
                     case 'person':
                         return (
                             <FormControl className="w-full h-full">
-                                <InputLabel >Person</InputLabel>
+                                <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
                                     label="Person"
@@ -77,7 +77,23 @@ const MUISelect = ({ typeOfSelect }) => {
 
                             </FormControl>
                         );
-                    
+                    default:
+                        return(
+                             <FormControl className="w-full h-full">
+                                <InputLabel >{label}</InputLabel>
+                                <Select
+                                    value={destinationCity}
+                                    label="Person"
+                                    onChange={handleChange}
+                                >
+                                    {/* //for ekle  */}
+                                    {cities.map(item => (
+                                        <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>
+                                    ))}
+                                </Select>
+
+                            </FormControl>
+                        )
                 }
             })()}
 

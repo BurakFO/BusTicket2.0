@@ -15,7 +15,7 @@ const TicketInputForm = () => {
         <div>
 
             {/* Background bus image here  */}
-            <div className="relative w-full" style={{ height: '41vh' }}>
+            <div className="relative w-full h-21vh sm:h-41vh" >
                 <img
                     src="https://images7.alphacoders.com/317/thumb-1920-317196.jpg"
                     alt="Bus4k Wallpaper"
@@ -24,46 +24,44 @@ const TicketInputForm = () => {
             </div>
 
             {/* input form here  */}
-            <div className="absolute flex flex-col left-0 right-0 top-0 mt-80 mx-10 sm:mx-80  px-2 sm:p-10 justify-center  bg-white" >
+            <div className="relative md:absolute flex flex-col left-0 right-0 top-0 md:mt-80  md:mx-24  p-4 sm:p-6 justify-center  bg-white rounded-xl shadow-lg" >
 
                 {/* Top Section */}
                 <h1 className="text-2xl text-slate-800 p-3">En uygun fiyatlı otobüs bileti BusTicket 2.0'da!</h1>
 
-                <MUICheckbox />
+                <div className="mb-2">
+
+                    <MUICheckbox />
+                </div>
 
 
                 {/* Bottom section */}
-                <div className="flex flex-col sm:flex-row justify-around items-center w-3/4  " >
+                <div className="flex flex-col md:flex-row items-center w-full gap-3" >
 
-                    <div className="w-full">
-                        <MUISelect typeOfSelect={'city'} />
+                    <div className="w-full md:w-3/12 ">
+                        <MUISelect typeOfSelect={'city'} label={"Nereden"} />
                     </div>
 
-                    <div className="w-3/12">
-                        <MUISelect typeOfSelect={'city'} />
+                    <div className="w-full md:w-3/12  md:ml-3">
+                        <MUISelect typeOfSelect={'city'} label={"Nereye"} />
                     </div>
 
-                    <div className="w-2/12 h-1/2">
-                        <MUISelect typeOfSelect={'person'} />
+                    <div className="w-full md:w-2/12 h-1/2  md:ml-3">
+                        <MUISelect typeOfSelect={'date'} label={"Gidis Tarihi"} />
                     </div>
 
-                    <div className="w-2/12 h-1/12">
-                        <MUIButton label={"Bilet Ara"}/>
+                    <div className="w-full md:w-2/12 h-1/2  md:ml-3">
+                        <MUISelect typeOfSelect={'person'} label={"Yolcular"} />
+                    </div>
+
+
+
+                    <div className="w-full md:w-3/12  md:ml-3">
+                        <MUIButton label={"Seferleri Göster"} size={"large"} />
                     </div>
                 </div>
 
 
-                <div>
-                    <div>nerden nereyte</div>
-                    <div>gidis tarihi</div>
-                    <div>Yolcu sayisi</div>
-                    <div>butotn seferleri goster fiyat bilgisiyle</div>
-                </div>
-                <form action="submit">
-
-                    <label htmlFor="">Name</label>
-                    <input type="text" />
-                </form>
             </div>
         </div>
     )
