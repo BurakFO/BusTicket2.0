@@ -23,6 +23,11 @@ const TicketInputForm = () => {
                 />
             </div>
 
+            {/* Space Div */}
+            <div className="hidden md:flex mt-32">
+
+            </div>
+
             {/* input form here  */}
             <div className="relative md:absolute flex flex-col left-0 right-0 top-0 md:mt-80  md:mx-24  p-4 sm:p-6 justify-center  bg-white rounded-xl shadow-lg" >
 

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './App.css';
 import BookingNumberPage from './pages/BookingNumberPage'
+import SearchResultsPage from './pages/SearchResultsPage'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Route path='/home' element={<HomePage />} />
         <Route path='/buy-ticket' element={<HomePage />} />
         <Route path='/booking-number' element={<BookingNumberPage />} />
+        <Route path='/search' element={<SearchResultsPage />} />
+        
 
       </Routes>
 
