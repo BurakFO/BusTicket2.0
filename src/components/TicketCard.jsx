@@ -9,7 +9,7 @@ const TicketCard = () => {
                 <div className="flex">
 
                     {/* Departure, Arrival, Location Info Section */}
-                    <div className="grid grid-cols-3 w-full ">
+                    <div className="grid grid-cols-3 w-full font-bold">
 
                         {/* Departure Time */}
                         <div>14:20</div>
@@ -19,15 +19,15 @@ const TicketCard = () => {
                         <div>20:45</div>
 
                         {/* Departure Location */}
-                        <div className="col-span-2">İstanbul-Alibeyköy</div>
+                        <div className="col-span-2 font-normal">İstanbul-Alibeyköy</div>
 
                         {/* Arrival Location */}
-                        <div>Ankara-Otogar</div>
+                        <div className="font-normal">Ankara-Otogar</div>
 
                     </div>
 
                     {/* Ticket Price Here */}
-                    <button className="">632TL</button>
+                    <div className="font-bold text-xl">632TL</div>
                 </div>
             </div>
 

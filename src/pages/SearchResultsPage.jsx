@@ -18,15 +18,15 @@ const SearchResultsPage = () => {
 
             {/* Ticket Cards Here */}
             <div className="flex justify-center">
-                <div className="flex flex-col items-center border w-3/4 p-4">
-                    <MUITabs />
+                <div className="flex flex-col items-center border min-w-[768px] p-4">
+                        <MUITabs />
 
                     <div className="flex items-center justify-between w-full">
-                        <Button>Filtreler</Button>
+                        <button className="border rounded-xl px-2 mb-2">FILTRELER</button>
                         <div>36 Sonuc</div>
                     </div>
-                    
-                    <TicketCard/>
+
+                    <TicketCard />
                 </div>
             </div>
         </>
