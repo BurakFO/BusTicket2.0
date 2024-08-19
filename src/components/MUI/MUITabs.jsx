@@ -12,9 +12,9 @@ export default function MUItabs() {
 
     return (
         <Tabs value={value} onChange={handleChange} aria-label="disabled tabs example">
-            <Tab label="Active" />
-            <Tab label="Disabled" disabled />
-            <Tab label="Active" />
+            <Tab label="Pzt, 19 Agustos" />
+            <Tab label="Sal, 20 Agustos" />
+            <Tab label="Car, 21 Agustos" />
         </Tabs>
     );
 }
