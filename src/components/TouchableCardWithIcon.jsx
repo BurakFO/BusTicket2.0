@@ -6,7 +6,7 @@ const TouchableCardWithIcon = ({ Icon }) => {
     //Icon degiskeni tanimla component props olarak kullansin.
     // text degiskeni tanimla component props olarak kullansin.
     return (
-        <div className="grid grid-cols-3 mt-5 border text-center">
+        <div className="grid grid-cols-3 border text-center">
 
             <button>
                 <div className="my-2 hover:bg-slate-100">

@@ -1,4 +1,5 @@
 import React from "react";
+import TicketInputForm from "../components/TicketInputForm";
 
 
 
@@ -6,7 +7,10 @@ const SearchResultsPage = () => {
 
     return (
         <>
-            Search Results Page
+            <div className="p-8">
+
+                <TicketInputForm />
+            </div>
         </>
     )
 }

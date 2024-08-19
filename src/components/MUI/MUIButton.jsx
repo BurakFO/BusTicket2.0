@@ -1,12 +1,19 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-const MUIButton = ({ label, size, color }) => {
+const MUIButton = ({ label, size, color, onMUIButton }) => {
+
 
     return (
         <>
             <div className="w-full">
-                <Button variant="contained" className="w-full" size={size} >{label}</Button>
+                <Button 
+                onClick={onMUIButton}
+                variant="contained" 
+                className="w-full" 
+                size={size} 
+                
+                >{label}</Button>
 
             </div>
         </>

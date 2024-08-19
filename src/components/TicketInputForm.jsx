@@ -3,36 +3,20 @@ import React, { useState } from "react";
 import MUICheckbox from "./MUI/MUICheckbox";
 import MUISelect from "./MUI/MUISelect";
 import MUIButton from "./MUI/MUIButton";
+import { useNavigate } from "react-router-dom";
+
 
 
 const TicketInputForm = () => {
 
     const [gender, setGender] = useState(null);
-
+    const navigate = useNavigate();
 
 
     return (
-        <div>
+            <>
 
-            {/* Background bus image here  */}
-            <div className="relative w-full h-21vh sm:h-41vh" >
-                <img
-                    src="https://images7.alphacoders.com/317/thumb-1920-317196.jpg"
-                    alt="Bus4k Wallpaper"
-                    className="w-full h-full object-cover"
-                />
-            </div>
-
-            {/* Space Div */}
-            <div className="hidden md:flex mt-32">
-
-            </div>
-
-            {/* input form here  */}
-            <div className="relative md:absolute flex flex-col left-0 right-0 top-0 md:mt-80  md:mx-24  p-4 sm:p-6 justify-center  bg-white rounded-xl shadow-lg" >
-
-                {/* Top Section */}
-                <h1 className="text-2xl text-slate-800 p-3">En uygun fiyatlı otobüs bileti BusTicket 2.0'da!</h1>
+               
 
                 <div className="mb-2">
 
@@ -41,7 +25,7 @@ const TicketInputForm = () => {
 
 
                 {/* Bottom section */}
-                <div className="flex flex-col md:flex-row items-center w-full gap-3" >
+                <div className="flex flex-col md:flex-row items-center w-full gap-2 md:gap-0" >
 
                     <div className="w-full md:w-3/12 ">
                         <MUISelect typeOfSelect={'city'} label={"Nereden"} />
@@ -62,13 +46,10 @@ const TicketInputForm = () => {
 
 
                     <div className="w-full md:w-3/12  md:ml-3">
-                        <MUIButton label={"Seferleri Göster"} size={"large"} />
+                        <MUIButton label={"Seferleri Göster"} size={"large"} onMUIButton={()=>navigate("/search")} />
                     </div>
                 </div>
-
-
-            </div>
-        </div>
+            </>
     )
 };
 
