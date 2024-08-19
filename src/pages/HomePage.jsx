@@ -15,7 +15,7 @@ const HomePage = () => {
             <div className="relative 
             ml-4 mt-2
             md:absolute md:-top-2  md:ml-28  md:mt-72  
-            md:text-white text-2xl md:text-3xl font-bold">
+            md:text-white text-2xl md:text-4xl font-bold">
                 <BannerTitle />
             </div>
 
