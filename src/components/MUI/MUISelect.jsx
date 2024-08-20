@@ -40,7 +40,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
                 switch (typeOfSelect) {
                     case 'city':
                         return (
-                            <FormControl className="w-full h-full">
+                            <FormControl className="w-full md:w-3/12  md:ml-3">
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
@@ -57,7 +57,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
 
                     case 'person':
                         return (
-                            <FormControl className="w-full h-full">
+                            <FormControl className="w-full md:w-3/12  md:ml-3">
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
@@ -74,7 +74,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
                         );
                     default:
                         return (
-                            <FormControl className="w-full h-full">
+                            <FormControl className="w-full md:w-2/12 h-1/2  md:ml-3">
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}

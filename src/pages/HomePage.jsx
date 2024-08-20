@@ -6,6 +6,7 @@ import TouchableCardWithIcon from "../components/TouchableCardWithIcon";
 import BackgroundImageBus from "../components/BackgroundImageBus";
 import BannerTitle from "../components/BannerTitle";
 
+
 const HomePage = () => {
 
     return (
@@ -19,8 +20,8 @@ const HomePage = () => {
                 <BannerTitle />
             </div>
 
+            {/* Top Section */}
             <div className="relative md:absolute flex flex-col left-0 right-0 top-0 md:mt-80  md:mx-24  p-4 sm:p-6 justify-center  bg-white rounded-xl shadow-lg">
-                {/* Top Section */}
                 <TicketInputForm />
             </div>
 
