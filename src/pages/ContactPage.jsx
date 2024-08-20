@@ -1,48 +1,141 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Box, Typography, TextField, Button, Alert } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { useForm } from 'react-hook-form';
+
+const CustomTextField = styled(TextField)(({ theme }) => ({
+  marginBottom: theme.spacing(1),
+  width: '100%',
+}));
 
 const MyMap = () => {
-  const position = [41.015137, 28.979530]; 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const position = [41.015137, 28.979530];
+
+  const onSubmit = (data) => {
+    if (!data.email || !data.phone || !data.subject || !data.message) {
+      setErrorMessage('Lütfen tüm alanları doldurun.');
+      return;
+    }
+
+    setSuccessMessage('Mesajınız başarıyla iletildi. Vakit ayırdığınız için teşekkür ederiz.');
+    setErrorMessage('');
+  };
 
   return (
-    <div className="bg-[#FEFAE0] h-[460px] w-[1000px] p-[30px] m-[15%] flex">
-      <Box
-        className="p-[20px] rounded-lg shadow-lg"
-        sx={{ backgroundColor: "#fff", width: "250px", marginRight: "20px" }}
-      >
-        <Typography variant="h6" className="text-gray-800">
-          Adres
-        </Typography>
-        <Typography variant="body1" className="text-gray-600">
-          istanbul/Türkiye
-        </Typography>
-        <Typography variant="h6" className="text-gray-800 mt-4">
-          Telefon Numarası
-        </Typography>
-        <Typography variant="body1" className="text-gray-600">
-          +90 555 555 55 55
-        </Typography>
-        <Typography variant="h6" className="text-gray-800 mt-4">
-          Email
-        </Typography>
-        <Typography variant="body1" className="text-gray-600">
-          busTicket@gmail.com
-        </Typography>
+    <div>
+      <Box className="p-4 mx-auto max-w-4xl mt-16">
+        <Box className="bg-white p-4 rounded-lg shadow-md mb-4">
+          <Typography variant="h6" className="text-gray-800 mb-2">
+            İletişim Formu
+          </Typography>
+
+          {successMessage && (
+            <Alert severity="success" className="mb-2">
+              {successMessage}
+            </Alert>
+          )}
+
+          {errorMessage && (
+            <Alert severity="error" className="mb-2">
+              {errorMessage}
+            </Alert>
+          )}
+
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <CustomTextField
+              label="E-posta Adresim"
+              {...register('email', { required: 'E-posta adresinizi girin.' })}
+              error={!!errors.email}
+              helperText={errors.email?.message}
+              variant="outlined"
+              placeholder="E-posta Adresim"
+            />
+            <CustomTextField
+              label="Telefon Numaram"
+              {...register('phone', { required: 'Telefon numaranızı girin.' })}
+              error={!!errors.phone}
+              helperText={errors.phone?.message}
+              variant="outlined"
+              placeholder="Telefon Numaram"
+            />
+            <CustomTextField
+              label="Konu"
+              {...register('subject', { required: 'Konu belirtiniz.' })}
+              error={!!errors.subject}
+              helperText={errors.subject?.message}
+              variant="outlined"
+              placeholder="Konu"
+            />
+            <CustomTextField
+              label="PNR Numaram"
+              {...register('pnr')}
+              variant="outlined"
+              placeholder="PNR Numaram"
+            />
+            <CustomTextField
+              label="Mesajım"
+              {...register('message', { required: 'Mesaj alanını boş bırakmayın.' })}
+              error={!!errors.message}
+              helperText={errors.message?.message}
+              variant="outlined"
+              placeholder="Mesajım"
+              multiline
+              rows={4}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="w-full mt-2"
+            >
+              Gönder
+            </Button>
+          </form>
+        </Box>
       </Box>
 
-      <MapContainer center={position} zoom={13} style={{ height: "400px", width: "700px" }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />
-        <Marker position={position}>
-          <Popup>
-            BusTicket
-          </Popup>
-        </Marker>
-      </MapContainer>
+      <div className="bg-white rounded-lg shadow-md mb-4 p-4 mx-auto max-w-6xl flex mt-24">
+        <Box
+          className="p-4 rounded-lg shadow-md"
+          sx={{ backgroundColor: "#fff", width: "300px", marginRight: "20px" }}
+        >
+          <Typography variant="h6" className="text-gray-800">
+            Adres
+          </Typography>
+          <Typography variant="body1" className="text-gray-600">
+            İstanbul, Türkiye
+          </Typography>
+          <Typography variant="h6" className="text-gray-800 mt-2">
+            Telefon Numarası
+          </Typography>
+          <Typography variant="body1" className="text-gray-600">
+            +90 555 555 55 55
+          </Typography>
+          <Typography variant="h6" className="text-gray-800 mt-2">
+            Email
+          </Typography>
+          <Typography variant="body1" className="text-gray-600">
+            busTicket@gmail.com
+          </Typography>
+        </Box>
+
+        <MapContainer center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; OpenStreetMap contributors"
+          />
+          <Marker position={position}>
+            <Popup>
+              BusTicket
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
     </div>
   );
 }
