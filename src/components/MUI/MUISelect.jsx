@@ -21,21 +21,18 @@ const MUISelect = ({ typeOfSelect, label }) => {
     }
 
 
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await axios.get('http://10.127.20.37:8080/api/cities');
-    //             setCities(response.data);
-    //             console.log(response.data);
-    //         } catch (error) {
-    //             setError(error.message);
-    //         }
-    //     };
-
-    //     fetchData(); //Fetching Data
-
-    // }, [])
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://10.127.20.37:8080/api/cities');
+                setCities(response.data);
+                console.log(response.data);
+            } catch (error) {
+                setError(error.message);
+            }
+        }
+        fetchData(); //Fetching Dat
+    }, [])
 
     return (
         <>
@@ -55,7 +52,6 @@ const MUISelect = ({ typeOfSelect, label }) => {
                                         <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>
                                     ))}
                                 </Select>
-
                             </FormControl>
                         );
 
@@ -77,8 +73,8 @@ const MUISelect = ({ typeOfSelect, label }) => {
                             </FormControl>
                         );
                     default:
-                        return(
-                             <FormControl className="w-full h-full">
+                        return (
+                            <FormControl className="w-full h-full">
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
