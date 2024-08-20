@@ -19,7 +19,6 @@ const TicketInputForm = () => {
                
 
                 <div className="mb-2">
-
                     <MUICheckbox />
                 </div>
 

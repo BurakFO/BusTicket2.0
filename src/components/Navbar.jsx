@@ -13,10 +13,8 @@ const Navbar = () => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" className="bg-slate-800">
+                <AppBar position="static" className="bg-slate-800 xl:px-6 2xl:px-64">
                     <Toolbar>
-
-
                         <Typography className=" text-2xl " > BusTicket 2.0 </Typography>
 
                         <Stack direction="row" spacing={2} className="hidden md:flex ml-auto" >

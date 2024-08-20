@@ -22,21 +22,20 @@ const MUISelect = ({ typeOfSelect, label }) => {
 
 
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://10.127.20.37:8080/api/cities');
-                console.log(response)
-                setCities(response.data);
-                console.log(response.data);
-            } catch (error) {
-                setError(error.message);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get('http://10.127.20.37:8080/api/cities');
+    //             setCities(response.data);
+    //             console.log(response.data);
+    //         } catch (error) {
+    //             setError(error.message);
+    //         }
+    //     };
 
-        fetchData(); //Fetching Data
+    //     fetchData(); //Fetching Data
 
-    }, [])
+    // }, [])
 
     return (
         <>
