@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
+import locations from '../assets/locations.json'; 
 
 const CustomTextField = styled(TextField)(({ theme }) => ({
   marginBottom: theme.spacing(1),
@@ -14,7 +15,7 @@ const MyMap = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const position = [41.015137, 28.979530];
+  const defaultPosition = [41.015137, 28.979530]; 
 
   const onSubmit = (data) => {
     if (!data.email || !data.phone || !data.subject || !data.message) {
@@ -124,16 +125,16 @@ const MyMap = () => {
           </Typography>
         </Box>
 
-        <MapContainer center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
+        <MapContainer center={defaultPosition} zoom={13} style={{ height: "400px", width: "100%" }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; OpenStreetMap contributors"
           />
-          <Marker position={position}>
-            <Popup>
-              BusTicket
-            </Popup>
-          </Marker>
+          {locations.map(location => (
+            <Marker key={location.id} position={location.coords}>
+              <Popup>{location.name}</Popup>
+            </Marker>
+          ))}
         </MapContainer>
       </div>
     </div>
