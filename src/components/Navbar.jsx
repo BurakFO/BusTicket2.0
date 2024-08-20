@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
+import { companyName } from "../lib/constants";
 
 const Navbar = () => {
 
@@ -16,7 +17,7 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" className="bg-slate-800 xl:px-6 2xl:px-64">
                     <Toolbar>
-                        <Link to={"/"}> <Typography className=" text-2xl " > BusTicket 2.0 </Typography> </Link>
+                        <Link to={"/"}> <Typography className=" text-2xl ">{companyName}</Typography> </Link>
 
                         <Stack direction="row" spacing={2} className="hidden md:flex ml-auto" >
                             <Link to={"/home"}>  <Button sx={{ color: 'inherit' }}>Ana Sayfa</Button> </Link>

@@ -1,11 +1,11 @@
 import React from "react";
-
+import { bannerTitle } from "../lib/constants";
 
 const BannerTitle = () => {
 
     return(
         
-        <h1>En uygun fiyatlı otobüs bileti BusTicket 2.0'da!</h1>
+        <h1>{bannerTitle}</h1>
     )
 }
 
