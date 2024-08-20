@@ -27,8 +27,8 @@ function App() {
         <Route path='/about-us' element={<AboutUsPage />} />
         <Route path='/contact' element={<ContactPage />}/> 
       </Routes>
-
-      <div className='hidden'>
+      
+      <div>
         <Footer />
       </div>
     </>
