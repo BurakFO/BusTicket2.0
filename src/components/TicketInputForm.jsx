@@ -4,10 +4,13 @@ import MUICheckbox from "./MUI/MUICheckbox";
 import MUISelect from "./MUI/MUISelect";
 import MUIButton from "./MUI/MUIButton";
 import { useNavigate } from "react-router-dom";
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import MUIDatePicker from "./MUI/MUIDatePicker";
 
 
 
-const TicketInputForm = () => {
+const TicketInputForm = ({children}) => {
+
 
     const [gender, setGender] = useState(null);
     const navigate = useNavigate();
@@ -17,7 +20,7 @@ const TicketInputForm = () => {
             <>
 
                
-
+                
                 <div className="mb-2">
                     <MUICheckbox />
                 </div>
@@ -26,21 +29,14 @@ const TicketInputForm = () => {
                 {/* Bottom section */}
                 <div className="flex flex-col md:flex-row items-center w-full gap-2 md:gap-0" >
 
-                    <div className="w-full md:w-3/12 ">
                         <MUISelect typeOfSelect={'city'} label={"Nereden"} />
-                    </div>
 
-                    <div className="w-full md:w-3/12  md:ml-3">
                         <MUISelect typeOfSelect={'city'} label={"Nereye"} />
-                    </div>
+                        
+                        <MUIDatePicker>Gidis Tarihi</MUIDatePicker>
 
-                    <div className="w-full md:w-2/12 h-1/2  md:ml-3">
-                        <MUISelect typeOfSelect={'date'} label={"Gidis Tarihi"} />
-                    </div>
+                        <MUISelect typeOfSelect={'person'} label={"Yolcular"}/>
 
-                    <div className="w-full md:w-2/12 h-1/2  md:ml-3">
-                        <MUISelect typeOfSelect={'person'} label={"Yolcular"} />
-                    </div>
 
 
 
