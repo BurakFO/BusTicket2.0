@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
-import locations from '../assets/locations.json'; 
+import { mapData } from '../lib/constants';
 
 const CustomTextField = styled(TextField)(({ theme }) => ({
   marginBottom: theme.spacing(1),
@@ -130,7 +130,8 @@ const MyMap = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; OpenStreetMap contributors"
           />
-          {locations.map(location => (
+          {mapData.map(location => ( 
+            
             <Marker key={location.id} position={location.coords}>
               <Popup>{location.name}</Popup>
             </Marker>
