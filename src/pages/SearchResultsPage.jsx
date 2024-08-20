@@ -29,6 +29,42 @@ const SearchResultsPage = () => {
                     <TicketCard />
                 </div>
             </div>
+            <div className="flex justify-center">
+                <div className="flex flex-col items-center border min-w-[768px] p-4">
+                        <MUITabs />
+
+                    <div className="flex items-center justify-between w-full">
+                        <button className="border rounded-xl px-2 mb-2">FILTRELER</button>
+                        <div>36 Sonuc</div>
+                    </div>
+
+                    <TicketCard />
+                </div>
+            </div>
+            <div className="flex justify-center">
+                <div className="flex flex-col items-center border min-w-[768px] p-4">
+                        <MUITabs />
+
+                    <div className="flex items-center justify-between w-full">
+                        <button className="border rounded-xl px-2 mb-2">FILTRELER</button>
+                        <div>36 Sonuc</div>
+                    </div>
+
+                    <TicketCard />
+                </div>
+            </div>
+            <div className="flex justify-center">
+                <div className="flex flex-col items-center border min-w-[768px] p-4">
+                        <MUITabs />
+
+                    <div className="flex items-center justify-between w-full">
+                        <button className="border rounded-xl px-2 mb-2">FILTRELER</button>
+                        <div>36 Sonuc</div>
+                    </div>
+
+                    <TicketCard />
+                </div>
+            </div>
         </>
     )
 }
