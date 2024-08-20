@@ -16,14 +16,14 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" className="bg-slate-800 xl:px-6 2xl:px-64">
                     <Toolbar>
-                        <Typography className=" text-2xl " > BusTicket 2.0 </Typography>
+                        <Link to={"/"}> <Typography className=" text-2xl " > BusTicket 2.0 </Typography> </Link>
 
                         <Stack direction="row" spacing={2} className="hidden md:flex ml-auto" >
                             <Link to={"/home"}>  <Button sx={{ color: 'inherit' }}>Ana Sayfa</Button> </Link>
-                            <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
+                            <Link to={"/about-us"}> <Button sx={{ color: 'inherit' }}>Hakkımızda</Button> </Link>
                             <Button sx={{ color: 'inherit' }}>Biletler</Button>
-                            <Button sx={{ color: 'inherit' }}>Seferler</Button>
-                            <Button sx={{ color: 'inherit' }}>İletişim</Button>
+                            <Link to={"/search"}><Button sx={{ color: 'inherit' }}>Seferler</Button></Link>
+                            <Link to={"/contact"}> <Button sx={{ color: 'inherit' }}>İletişim</Button> </Link>
 
                         </Stack>
 
