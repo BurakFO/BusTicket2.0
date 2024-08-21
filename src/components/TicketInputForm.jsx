@@ -13,7 +13,12 @@ const TicketInputForm = ({children}) => {
 
     const [date, setDate] = useState(dayjs());
     const [gender, setGender] = useState(null);
+    const [passengerCount, setPassengerCount] = useState(1);
+
     const navigate = useNavigate();
+
+    const incrementPassengerCount = () => setPassengerCount(prevCount => Math.min(prevCount + 1, 10));
+    const decrementPassengerCount = () => setPassengerCount(prevCount => Math.max(prevCount - 1, 0));
 
     const handleDateChange = (formattedDate) => {
 
@@ -52,9 +57,23 @@ const TicketInputForm = ({children}) => {
                         
                         <MUIDatePicker date={date} onDateChange={handleDateChange}>Gidis Tarihi</MUIDatePicker>
 
-                        <MUISelect typeOfSelect={'person'} label={"Yolcular"}/>
-
-
+                        <FormControl sx={{ minWidth: "170px", marginLeft: "10px" }}>
+                        <InputLabel id="passenger-select-label">Yolcu</InputLabel>
+                            <Select
+                                labelId="passenger-select-label"
+                                id="passenger-select"
+                                value={passengerCount}
+                                renderValue={() => `Yolcu Sayısı: ${passengerCount}`}
+                            >
+                            <MenuItem>
+                                <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
+                                    <Button onClick={decrementPassengerCount}>-</Button>
+                                    <span>{passengerCount}</span>
+                                    <Button onClick={incrementPassengerCount}>+</Button>
+                                </Box>
+                            </MenuItem>
+                            </Select>
+                        </FormControl>
 
 
                     <div className="w-full md:w-3/12  md:ml-3">
