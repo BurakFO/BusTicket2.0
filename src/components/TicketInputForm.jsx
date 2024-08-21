@@ -9,7 +9,6 @@ import dayjs from "dayjs";
 
 const TicketInputForm = ({children}) => {
     const [date, setDate] = useState(dayjs());
-    const [gender, setGender] = useState(null);
     const [passengerCount, setPassengerCount] = useState(1);
 
     const navigate = useNavigate();
@@ -23,6 +22,7 @@ const TicketInputForm = ({children}) => {
         event.stopPropagation(); // Dropdown'ın kapanmasını engellemek için olayın yayılmasını durdurur
         setPassengerCount(prevCount => Math.max(prevCount - 1, 0));
     };
+
 
     const handleDateChange = (formattedDate) => {
 
@@ -42,8 +42,8 @@ const TicketInputForm = ({children}) => {
     }
 
     const onSubmit = () => {
-        //navigate(`/search?date=${date}`);
         alert(`The date is ${date}`);
+        navigate(`/search?date=${date}`);
     }
 
     return (

@@ -5,9 +5,14 @@ import MUIButton from "../components/MUI/MUIButton";
 import TouchableCardWithIcon from "../components/TouchableCardWithIcon";
 import BackgroundImageBus from "../components/BackgroundImageBus";
 import BannerTitle from "../components/BannerTitle";
+import { useSelector } from "react-redux";
+
 
 
 const HomePage = () => {
+
+    const { selectedDepartureCityID, selectedArrivalCityID } = useSelector((state) => state.ticketDetailSlice);
+
 
     return (
         <>
@@ -31,6 +36,8 @@ const HomePage = () => {
             <div className=" mt-5">
                 <TouchableCardWithIcon />
             </div>
+            {selectedDepartureCityID}
+            {selectedArrivalCityID}
         </>
     )
 }
