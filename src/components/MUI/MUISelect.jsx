@@ -8,7 +8,6 @@ import Select from '@mui/material/Select';
 import axios from "axios";
 
 
-
 const MUISelect = ({ typeOfSelect, label }) => {
 
     const [departureCity, setDepartureCity] = useState("");
@@ -20,7 +19,6 @@ const MUISelect = ({ typeOfSelect, label }) => {
         setDestinationCity(e.target.value);
         alert("City has been changed => " + e.target.value)
     }
-
 
     useEffect(() => {
         const fetchData = async () => {
