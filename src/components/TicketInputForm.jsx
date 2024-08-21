@@ -1,5 +1,5 @@
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import React, { useState } from "react";
+import { FormControl, InputLabel, Select, MenuItem, Box, Button } from "@mui/material";
 import MUICheckbox from "./MUI/MUICheckbox";
 import MUISelect from "./MUI/MUISelect";
 import MUIButton from "./MUI/MUIButton";
@@ -38,14 +38,10 @@ const TicketInputForm = ({children}) => {
     }
 
     return (
-            <>
-
-               
-                
-                <div className="mb-2">
-                    <MUICheckbox />
-                </div>
-
+        <>
+            <div className="mb-2">
+                <MUICheckbox />
+            </div>
 
                 {/* Bottom section */}
                 <div className="flex flex-col md:flex-row items-center w-full gap-2 md:gap-0" >
@@ -68,6 +64,5 @@ const TicketInputForm = ({children}) => {
             </>
     )
 };
-
 
 export default TicketInputForm;
