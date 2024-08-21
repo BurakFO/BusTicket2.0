@@ -11,6 +11,7 @@ import axios from "axios";
 
 const MUISelect = ({ typeOfSelect, label }) => {
 
+    const [departureCity, setDepartureCity] = useState("");
     const [destinationCity, setDestinationCity] = useState("");
     const [cities, setCities] = useState([]);
     const [error, setError] = useState("");
@@ -44,7 +45,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
-                                    label="Nereden"
+                                    label={label}
                                     onChange={handleChange}
                                 >
                                     {/* //for ekle  */}
@@ -61,7 +62,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
-                                    label="Person"
+                                    label={label}
                                     onChange={handleChange}
                                 >
                                     {/* //for ekle  */}
@@ -78,7 +79,7 @@ const MUISelect = ({ typeOfSelect, label }) => {
                                 <InputLabel >{label}</InputLabel>
                                 <Select
                                     value={destinationCity}
-                                    label="Person"
+                                    label={label}
                                     onChange={handleChange}
                                 >
                                     {/* //for ekle  */}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MUIButton from "./MUI/MUIButton";
-import axios from "axios";
+
 
 
 const TicketCardDetail = ({ departureTime, tripTime, arrivalTime, departureLocation, arrivalLocation, ticketPrice }) => {
