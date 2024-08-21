@@ -9,7 +9,6 @@ import dayjs from "dayjs";
 
 const TicketInputForm = ({children}) => {
     const [date, setDate] = useState(dayjs());
-    const [gender, setGender] = useState(null);
     const [passengerCount, setPassengerCount] = useState(1);
 
     const navigate = useNavigate();
@@ -23,6 +22,7 @@ const TicketInputForm = ({children}) => {
         event.stopPropagation(); // Dropdown'ın kapanmasını engellemek için olayın yayılmasını durdurur
         setPassengerCount(prevCount => Math.max(prevCount - 1, 0));
     };
+
 
     const handleDateChange = (formattedDate) => {
 
@@ -42,8 +42,8 @@ const TicketInputForm = ({children}) => {
     }
 
     const onSubmit = () => {
-        //navigate(`/search?date=${date}`);
         alert(`The date is ${date}`);
+        navigate(`/search?date=${date}`);
     }
 
     return (
@@ -61,19 +61,25 @@ const TicketInputForm = ({children}) => {
                 
                 <MUIDatePicker date={date} onDateChange={handleDateChange}>Gidis Tarihi</MUIDatePicker>
 
-                <FormControl sx={{ minWidth: "170px", marginLeft: "10px" }}>
-                    <InputLabel id="passenger-select-label">Yolcu</InputLabel>
+                <FormControl sx={{ minWidth: "170px", width: "100%", maxWidth: "200px", alignSelf: "flex-start", ml: { xs: 0, md: "8px" } }}>
+                    <InputLabel id="passenger-select-label" sx={{ fontSize: "14px", transform: 'translate(14px, -6px) scale(0.85)', backgroundColor: 'white', padding: '0 4px',zIndex: 1,}}>
+                        Yolcu
+                    </InputLabel>
                     <Select
                         labelId="passenger-select-label"
                         id="passenger-select"
                         value={passengerCount}
                         renderValue={() => `Yolcu Sayısı: ${passengerCount}`}
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                        }}
                     >
                         <MenuItem>
                             <Box display="flex" alignItems="center" justifyContent="space-between" width="100%">
-                                <Button onClick={decrementPassengerCount}>-</Button>
+                                <Button onClick={decrementPassengerCount} sx={{ minWidth: "30px" }}>-</Button>
                                 <span>{passengerCount}</span>
-                                <Button onClick={incrementPassengerCount}>+</Button>
+                                <Button onClick={incrementPassengerCount} sx={{ minWidth: "30px" }}>+</Button>
                             </Box>
                         </MenuItem>
                     </Select>
