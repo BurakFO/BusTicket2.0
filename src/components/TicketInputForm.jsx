@@ -4,7 +4,6 @@ import MUICheckbox from "./MUI/MUICheckbox";
 import MUISelect from "./MUI/MUISelect";
 import MUIButton from "./MUI/MUIButton";
 import { useNavigate } from "react-router-dom";
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import MUIDatePicker from "./MUI/MUIDatePicker";
 
 

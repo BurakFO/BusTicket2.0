@@ -109,3 +109,5 @@ export const mapData = [
 export const bannerTitle = "En uygun fiyatlı otobüs bileti BusTicket 2.0'da!";
 
 export const companyName = "BusTicket 2.0";
+
+
