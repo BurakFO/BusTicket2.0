@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     selectedDepartureCityID: 1,
+    selectedDepartureCityName: "Istanbul",
     selectedArrivalCityID: 5,
 }
 
