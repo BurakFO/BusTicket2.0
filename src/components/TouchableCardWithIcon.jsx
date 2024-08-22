@@ -5,6 +5,8 @@ import { IoTicketOutline } from "react-icons/io5";
 const TouchableCardWithIcon = ({ Icon }) => {
     //Icon degiskeni tanimla component props olarak kullansin.
     // text degiskeni tanimla component props olarak kullansin.
+
+
     return (
         <div className="grid grid-cols-3 border text-center">
 

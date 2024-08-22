@@ -36,8 +36,6 @@ const HomePage = () => {
             <div className=" mt-5">
                 <TouchableCardWithIcon />
             </div>
-            {selectedDepartureCityID}
-            {selectedArrivalCityID}
         </>
     )
 }
