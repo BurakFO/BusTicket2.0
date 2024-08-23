@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FormControl, InputLabel, Select, MenuItem, Box, Button } from "@mui/material";
+
 import MUICheckbox from "./MUI/MUICheckbox";
 import MUIButton from "./MUI/MUIButton";
-import { useNavigate } from "react-router-dom";
 import MUIDatePicker from "./MUI/MUIDatePicker";
+
 import dayjs from "dayjs";
 import axios from "axios";
-import { useSelector } from "react-redux";
+
+import { dateFormatType } from "../lib/constants";
 
 const TicketInputForm = ({ children }) => {
+    
     const [date, setDate] = useState(dayjs());
     const [passengerCount, setPassengerCount] = useState(1);
     const [cities, setCities] = useState([]);
@@ -34,8 +39,9 @@ const TicketInputForm = ({ children }) => {
         setDate(formattedDate);
     };
 
+
     const onSubmit = () => {
-        const formattedDate = date.format('YYYY-MM-DD');
+        const formattedDate = date.format(dateFormatType);
         alert(`The date is ${formattedDate}`);
         alert(`The Arrival City is: ${arrivalCity}`);
         alert(`The Departure City is: ${departureCity}`);
@@ -58,6 +64,7 @@ const TicketInputForm = ({ children }) => {
         setDepartureCity(selectedDepartureCityID);
         setArrivalCity(selectedArrivalCityID);
     }, [selectedDepartureCityID, selectedArrivalCityID]);
+
 
     return (
         <>
