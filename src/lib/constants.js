@@ -184,3 +184,15 @@ export const tickets = [
         date: "2024-10-10" 
     }
   ];
+
+export const positions = [
+    "Kabin memuru (Host)",
+    "Servis şoförü",
+    "Bilet satış görevlisi",
+    "Muhasebe",
+    "İnsan Kaynakları",
+    "Finans",
+    "Ön Muhasebe",
+    "Çağrı Merkezi Personeli",
+    "Peron Kontrol Görevlisi"
+]

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
+import { positions } from '../lib/constants';
 
 const CustomTextField = styled(TextField)(({ theme }) => ({
   marginBottom: theme.spacing(1),
@@ -85,6 +86,7 @@ const JoinUsPage = () => {
                     placeholder="Telefon Numaram"
                 />
                 <CustomTextField
+                    label="Pozisyon"
                     {...register('position', { required: 'Pozisyon seçiniz.' })}
                     error={!!errors.position}
                     helperText={errors.position?.message}
@@ -93,15 +95,9 @@ const JoinUsPage = () => {
                     SelectProps={{ native: true }}
                 >
                     <option value="">Pozisyon Seçin</option>
-                    <option>Kabin memuru (Host)</option>
-                    <option>Servis şoförü</option>
-                    <option>Bilet satış görevlisi</option>
-                    <option>Muhasebe</option>
-                    <option>İnsan Kaynakları</option>
-                    <option>Finans</option>
-                    <option>Ön Muhasebe</option>
-                    <option>Çağrı Merkezi Personeli</option>
-                    <option>Peron Kontrol Görevlisi</option>
+                    {positions.map((position, index) => (
+                      <option key={index} value={position}>{position}</option>
+                    ))}
                 </CustomTextField>
                 <CustomTextField
                     label="Mesajınız (isteğe bağlı)"
