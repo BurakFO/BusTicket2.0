@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="text-center">
           <h2 className="text-xl font-bold mb-4">Bize Katılmak İster Misin ?</h2>
           <p className="mb-6">Bize katılmak istiyorsan aşağıdaki butona tıklayarak daha fazla bilgi alabilirsin.</p>
-          <Button variant="contained" color="primary" className="bg-blue-500 hover:bg-blue-600">
+          <Link to={"/join-us"}><Button variant="contained" color="primary" className="bg-blue-500 hover:bg-blue-600">
             Bize Katıl
-          </Button>
+          </Button></Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10 text-center">
           <div>
