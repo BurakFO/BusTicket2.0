@@ -110,4 +110,75 @@ export const bannerTitle = "En uygun fiyatlı otobüs bileti BusTicket 2.0'da!";
 
 export const companyName = "BusTicket 2.0";
 
-
+export const tickets = [
+    { 
+        pnrCode: "PNR12345",
+        passengerName: "John Doe",
+        departure: "Istanbul", 
+        destination: "Ankara", 
+        date: "2024-08-30" 
+    },
+    { 
+        pnrCode: "PNR54321", 
+        passengerName: "Jane Smith", 
+        departure: "Izmir", 
+        destination: "Bursa", 
+        date: "2024-09-05" 
+    },
+    { 
+        pnrCode: "PNR67890", 
+        passengerName: "Alice Johnson", 
+        departure: "Antalya", 
+        destination: "Gaziantep", 
+        date: "2024-09-10" 
+    },
+    { 
+        pnrCode: "PNR09876", 
+        passengerName: "Bob Brown", 
+        departure: "Konya", 
+        destination: "Istanbul", 
+        date: "2024-09-15" 
+    },
+    { 
+        pnrCode: "PNR13579", 
+        passengerName: "Charlie Davis", 
+        departure: "Adana", 
+        destination: "Kayseri", 
+        date: "2024-09-20" 
+    },
+    { 
+        pnrCode: "PNR97531", 
+        passengerName: "Daisy Evans", 
+        departure: "Trabzon", 
+        destination: "Samsun", 
+        date: "2024-09-25" 
+    },
+    { 
+        pnrCode: "PNR24680", 
+        passengerName: "Edward Green", 
+        departure: "Malatya", 
+        destination: "Diyarbakir", 
+        date: "2024-09-28" 
+    },
+    { 
+        pnrCode: "PNR08642", 
+        passengerName: "Fiona Harris", 
+        departure: "Van", 
+        destination: "Erzurum", 
+        date: "2024-10-02" 
+    },
+    { 
+        pnrCode: "PNR35791", 
+        passengerName: "George King", 
+        departure: "Antakya", 
+        destination: "Mersin", 
+        date: "2024-10-06" 
+    },
+    { 
+        pnrCode: "PNR19753", 
+        passengerName: "Hannah Lee", 
+        departure: "Sakarya", 
+        destination: "Eskisehir", 
+        date: "2024-10-10" 
+    }
+  ];

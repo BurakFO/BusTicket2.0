@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import BackgroundImageBus from "../components/BackgroundImageBus";
 import { styled } from "@mui/material/styles";
 import { Input, Button, Box } from "@mui/material";
+import { tickets } from "../lib/constants";
 
 const CustomInput = styled(Input)(({ theme }) => ({
   padding: "10px 15px",
@@ -48,7 +49,54 @@ const ContentBox = styled(Box)(({ theme }) => ({
   },
 }));
 
+const TicketInfoBox = styled(Box)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: "8px",
+  backgroundColor: "#f7f7f7",
+  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+  padding: "20px",
+  overflow: "auto",
+  maxHeight: "100%",
+  border: "2px solid transparent",
+  transition: "border 0.3s ease",
+}));
+
+const ErrorBox = styled(Box)(({ hasError }) => ({
+  width: "80%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  borderRadius: "8px",
+  backgroundColor: "white",
+  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+  border: hasError ? '2px solid red' : '1px solid #c5c5c5',
+  animation: hasError ? 'shake 0.6s ease-in-out' : 'none',
+}));
+
 const BookingNumberPage = () => {
+  const [pnrCode, setPnrCode] = useState('');
+  const [ticketInfo, setTicketInfo] = useState(null);
+  const [hasError, setHasError] = useState(false);
+
+  const handleInputChange = (event) => {
+    setPnrCode(event.target.value);
+  };
+
+  const checkPnr = () => {
+    const foundTicket = tickets.find((ticket) => ticket.pnrCode === pnrCode);
+    if (foundTicket) {
+      setTicketInfo(foundTicket);
+      setHasError(false);
+    } else {
+      setHasError(true);
+      setTicketInfo(null);
+    }
+  };
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "90vh" }}>
       <Box sx={{ flexGrow: 1, position: "relative", marginBottom: 0 }}>
@@ -74,22 +122,28 @@ const BookingNumberPage = () => {
           }}
         >
           <label>PNR Numarası</label>
-          <Box
-            sx={{
-              width: "80%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "8px",
-              backgroundColor: "white",
-              boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            <CustomInput disableUnderline placeholder="PNR" />
-            <CustomButton variant="contained">Sorgula</CustomButton>
-          </Box>
+          <ErrorBox hasError={hasError}>
+            <CustomInput
+              disableUnderline
+              placeholder="PNR"
+              value={pnrCode}
+              onChange={handleInputChange}
+            />
+            <CustomButton variant="contained" onClick={checkPnr}>Sorgula</CustomButton>
+          </ErrorBox>
         </Box>
       </Box>
+
+      {ticketInfo && (
+        <TicketInfoBox>
+          <h3>Bilet Bilgileri</h3>
+          <p><strong>Yolcu Adı:</strong> {ticketInfo.passengerName}</p>
+          <p><strong>Kalkış:</strong> {ticketInfo.departure}</p>
+          <p><strong>Varış:</strong> {ticketInfo.destination}</p>
+          <p><strong>Tarih:</strong> {ticketInfo.date}</p>
+        </TicketInfoBox>
+      )}
+
       <Box
         sx={{
           display: "flex",
