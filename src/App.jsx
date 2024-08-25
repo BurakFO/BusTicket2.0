@@ -10,6 +10,7 @@ import SearchResultsPage from './pages/SearchResultsPage'
 import 'leaflet/dist/leaflet.css';
 import ContactPage from "./pages/ContactPage";
 import JoinUsPage from "./pages/JoinUsPage";
+import CheckoutPage from './pages/CheckoutPage'
 
 
 function App() {
@@ -26,10 +27,11 @@ function App() {
         <Route path='/booking-number' element={<BookingNumberPage />} />
         <Route path='/search' element={<SearchResultsPage />} />
         <Route path='/about-us' element={<AboutUsPage />} />
-        <Route path='/contact' element={<ContactPage />}/> 
+        <Route path='/contact' element={<ContactPage />} />
         <Route path='/join-us' element={<JoinUsPage />} />
+        <Route path='/checkout' element={<CheckoutPage />} />
       </Routes>
-      
+
       <div>
         <Footer />
       </div>
