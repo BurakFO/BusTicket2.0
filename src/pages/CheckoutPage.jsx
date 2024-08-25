@@ -14,10 +14,10 @@ import {
 const InformationCard = ({ cardNumber, cardTitle, children }) => {
 
     return (
-        <section className="border rounded mb-6 mr-8">
+        <section className="border  rounded mb-6 mr-8 p-4 bg-white">
 
             {/* Header Section */}
-            <header className="flex flex-row items-center">
+            <header className="flex flex-row items-center mb-4">
                 {/* number section */}
                 <div className="p-2">
                     <div className="bg-blue-700 text-white font-bold rounded text-2xl  w-8 h-8 flex items-center justify-center">{cardNumber}</div>
@@ -35,7 +35,7 @@ const InformationCard = ({ cardNumber, cardTitle, children }) => {
 const CheckoutPage = () => {
 
     return (
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-row justify-center bg-[#F7F7F7]">
             <div className="w-7/12 h-full">
 
                 <Link to={"/search"} className="inline-block w-7/12 mt-6 mb-2 ">{GoBackButtonLabel}</Link>
@@ -43,7 +43,7 @@ const CheckoutPage = () => {
                 <InformationCard cardNumber={1} cardTitle={SeatSelectionTitle}>
 
                     {/* Content Section */}
-                    <div className="flex border rounded p-4 justify-between">
+                    <div className="flex border  rounded p-4 justify-between">
 
                         <div className="flex flex-row">
 
@@ -173,7 +173,7 @@ const CheckoutPage = () => {
             </div>
 
             {/* Ticket and Payment Information dockright */}
-            <div className="w-1/5 h-full border rounded bg-red-600 mt-8">
+            <div className="sticky top-8 w-1/5 h-full border rounded bg-red-600 mt-8">
                 <div className="flex flex-row justify-between">
 
                     <div>

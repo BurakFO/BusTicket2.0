@@ -7,6 +7,7 @@ export default {
   important: '#root',
   theme: {
     extend: {
+
       height: {
         '21vh': '21vh',
         '41vh': '41vh',
