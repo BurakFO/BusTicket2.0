@@ -184,3 +184,5 @@ export const tickets = [
         date: "2024-10-10" 
     }
   ];
+
+export const BASE_URL = 'http://10.127.20.37:8080/api';

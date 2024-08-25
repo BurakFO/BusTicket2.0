@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import axios from "axios";
 
 import { dateFormatType } from "../lib/constants";
+import { BASE_URL } from "../lib/constants";
 
 const TicketInputForm = ({ children }) => {
     
@@ -51,7 +52,7 @@ const TicketInputForm = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://10.127.20.37:8080/api/cities');
+                const response = await axios.get(`${BASE_URL}/cities`);
                 setCities(response.data);
             } catch (error) {
                 setError(error.message);

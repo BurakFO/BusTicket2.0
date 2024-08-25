@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 
 const MUIDatePicker = ({children, date, onDateChange}) => {
 
-    const [datee, setDatee] = useState(dayjs());
+
 
     const handleChange = (newValue) => {
         const formattedDate = newValue; // kaldirilabilir

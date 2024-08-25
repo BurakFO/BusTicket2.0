@@ -13,7 +13,6 @@ const HomePage = () => {
 
     const { selectedDepartureCityID, selectedArrivalCityID } = useSelector((state) => state.ticketDetailSlice);
 
-
     return (
         <>
             <BackgroundImageBus />
@@ -36,6 +35,7 @@ const HomePage = () => {
             <div className=" mt-5">
                 <TouchableCardWithIcon />
             </div>
+
         </>
     )
 }

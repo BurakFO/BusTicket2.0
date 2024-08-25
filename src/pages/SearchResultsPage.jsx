@@ -6,6 +6,7 @@ import MUIButton from "../components/MUI/MUIButton";
 import TicketCard from "../components/TicketCard";
 import axios from "axios";
 import TicketCardDetail from "../components/TicketCardDetail";
+import { BASE_URL } from "../lib/constants";
 
 
 
@@ -17,7 +18,7 @@ const SearchResultsPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://10.127.20.37:8080/api/trips');
+                const response = await axios.get(`${BASE_URL}/trips`);
                 setTickets(response.data);
                 //console.log(response.data);
                 console.log(tickets[0].route.startCity.name)
