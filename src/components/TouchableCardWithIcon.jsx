@@ -1,5 +1,6 @@
 import React from "react";
 import { IoTicketOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 const TouchableCardWithIcon = ({ Icon }) => {
@@ -26,7 +27,7 @@ const TouchableCardWithIcon = ({ Icon }) => {
                     <div className="flex flex-col items-center border-x">
 
                         <div className="text-3xl my-2"><IoTicketOutline /></div>
-                        <div className="">PNR code here</div>
+                        <Link to={"/booking-number"}><div className="">PNR code here</div></Link>
                     </div>
                 </div>
             </button>

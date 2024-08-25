@@ -186,3 +186,15 @@ export const tickets = [
   ];
 
 export const BASE_URL = 'http://10.127.20.37:8080/api';
+
+export const positions = [
+    "Kabin memuru (Host)",
+    "Servis şoförü",
+    "Bilet satış görevlisi",
+    "Muhasebe",
+    "İnsan Kaynakları",
+    "Finans",
+    "Ön Muhasebe",
+    "Çağrı Merkezi Personeli",
+    "Peron Kontrol Görevlisi"
+]
