@@ -1,14 +1,16 @@
-import { Button, TextField } from "@mui/material";
+import { Box, Button, FormControlLabel, TextField } from "@mui/material";
 import React from "react";
 import MUIButton from "../components/MUI/MUIButton";
 import { Link } from "react-router-dom";
-import { 
-    GoBackButtonLabel, 
-    SeatSelectionTitle, 
-    PassengerInformationTitle, 
-    ContactInformationTitle, 
+import {
+    GoBackButtonLabel,
+    SeatSelectionTitle,
+    PassengerInformationTitle,
+    ContactInformationTitle,
     PaymentInformationTitle,
-    SelectSeatTitle } from "../lib/constants";
+    SelectSeatTitle
+} from "../lib/constants";
+import Checkbox from '@mui/material/Checkbox';
 
 {/* Information Card */ }
 const InformationCard = ({ cardNumber, cardTitle, children }) => {
@@ -36,14 +38,14 @@ const CheckoutPage = () => {
 
     return (
         <div className="flex flex-row justify-center bg-[#F7F7F7]">
-            <div className="w-7/12 h-full">
+            <div className="w-6/12 h-full">
 
                 <Link to={"/search"} className="inline-block w-7/12 mt-6 mb-2 ">{GoBackButtonLabel}</Link>
 
                 <InformationCard cardNumber={1} cardTitle={SeatSelectionTitle}>
 
                     {/* Content Section */}
-                    <div className="flex border  rounded p-4 justify-between">
+                    <div className="flex border rounded p-4 justify-between">
 
                         <div className="flex flex-row">
 
@@ -64,7 +66,7 @@ const CheckoutPage = () => {
                 <InformationCard cardNumber={2} cardTitle={PassengerInformationTitle} >
                     <div className="ml-8">
                         <div>cinsiyet</div>
-                        <div> Erkek- Kadnin</div>
+                        <div> Erkek - Kadın</div>
                     </div>
 
                     {/* Input Form */}
@@ -84,8 +86,8 @@ const CheckoutPage = () => {
 
                 <InformationCard cardNumber={3} cardTitle={ContactInformationTitle} >
                     <div className="ml-8">
-                        <div>cinsiyet</div>
-                        <div> Erkek- Kadnin</div>
+                        <div> Cinsiyet</div>
+                        <div> Erkek - Kadın</div>
                     </div>
 
                     {/* Input Form */}
@@ -173,17 +175,78 @@ const CheckoutPage = () => {
             </div>
 
             {/* Ticket and Payment Information dockright */}
-            <div className="sticky top-8 w-1/5 h-full border rounded bg-red-600 mt-8">
+            <div className="sticky top-8 w-3/12 h-full rounded mt-8">
                 <div className="flex flex-row justify-between">
 
                     <div>
-                        <h1 className="text-xl"> Bilet ve Odeme Bilgileri </h1>
+                        <h1 className="text-xl font-semibold"> Bilet ve Ödeme Bilgileri </h1>
                     </div>
 
                     <div className="border rounded">
-                        <Button size="small">Counter here</Button>
+                        <Button size="medium" className="bg-white">counter</Button>
                     </div>
                 </div>
+
+                <div className="flex bg-white rounded  font-semibold mt-6 px-2 pt-3 justify-between">
+                    <div>
+                        26 Agu Pzt
+                    </div>
+
+                    <div>
+                        Direkt Yolculuk
+                    </div>
+                </div>
+
+                <div className="p-4 bg-white">
+
+                    <div className="flex justify-between">
+                        <div>
+                             Istanbul-Esenler Otogar
+                        </div>
+                        <div>
+                            10:00
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <div>
+                             Ankara Otogar
+                        </div>
+                        <div>
+                            17:00
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-between p-3 font-semibold border-b ">
+                    <div>
+                        1 Yetiskin
+                    </div>
+                    <div className="text-lg">
+                        699 TL
+                    </div>
+                </div>
+
+                <div className="flex justify-between p-3 font-semibold text-xl">
+                    <div>
+                        Toplam (KDV Dahil)
+                    </div>
+                    <div>
+                        699 TL
+                    </div>
+                </div>
+
+                <div className="flex pt-4 mb-4">
+
+                    <div>
+                        <Checkbox size="large" />
+                    </div>
+                    <div className="pt-2">
+                        Gizlilik Politikasını okuduğumu beyan etmekle birlikte, Bilet Satın Alma Şart ve Koşulları ile Taşıma Şart ve Koşullarını kabul ederim.
+                    </div>
+                </div>
+
+                <MUIButton label={"Hemen Al"}/>
             </div>
 
         </div>
