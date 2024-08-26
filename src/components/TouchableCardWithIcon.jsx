@@ -23,13 +23,13 @@ const TouchableCardWithIcon = ({ Icon }) => {
 
 
             <button>
-                <div className="my-2 hover:bg-slate-100">
+            <Link to={"/booking-number"}><div className="my-2 hover:bg-slate-100">
                     <div className="flex flex-col items-center border-x">
 
                         <div className="text-3xl my-2"><IoTicketOutline /></div>
-                        <Link to={"/booking-number"}><div className="">PNR code here</div></Link>
+                        <div className="">PNR code here</div>
                     </div>
-                </div>
+                </div></Link>
             </button>
 
             <button>
