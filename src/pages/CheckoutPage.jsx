@@ -236,7 +236,7 @@ const CheckoutPage = () => {
                     </div>
                 </div>
 
-                <div className="flex pt-4 mb-4">
+                <div className="flex pt-4 mb-4 hover:">
 
                     <div>
                         <Checkbox size="large" />

@@ -8,7 +8,7 @@ import axios from "axios";
 import TicketCardDetail from "../components/TicketCardDetail";
 import { BASE_URL } from "../lib/constants";
 
-
+import { ticketData } from "../lib/constants";
 
 const SearchResultsPage = () => {
 
@@ -24,6 +24,8 @@ const SearchResultsPage = () => {
                 console.log(tickets[0].route.startCity.name)
             } catch (error) {
                 setError(error.message);
+                setTickets(ticketData);
+                console.log(tickets);
             }
         };
 
@@ -59,12 +61,15 @@ const SearchResultsPage = () => {
                     <div className="flex flex-col items-center border min-w-[768px] px-5 py-3 bg-white rounded-md">
                         <TicketCard>
                             <TicketCardDetail
-                            departureTime={"11:45"}
-                            tripTime={"6:30 saat"}
-                            arrivalTime={"18:30"}
-                            departureLocation={item.route.startCity.name}
-                            arrivalLocation={item.route.endCity.name}
-                            ticketPrice={item.price}
+                            departureTime={item.departureTime}
+                            tripTime={item.tripTime}
+                            arrivalTime={item.arrivalTime}
+                            departureLocation={item.departureLocation}
+                           // departureLocation={item.route.startCity.name}
+                            arrivalLocation={item.arrivalLocation}
+                            // arrivalLocation={item.route.endCity.name}
+                            ticketPrice={item.ticketPrice}
+                            //ticketPrice={item.price}
                             />
                         </TicketCard>
                     </div>

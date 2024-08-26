@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MUIButton from "./MUI/MUIButton";
+import { Link } from "react-router-dom";
 
 
 
@@ -29,7 +30,7 @@ const TicketCardDetail = ({ departureTime, tripTime, arrivalTime, departureLocat
                 </div>
 
                 {/* Ticket Price Here */}
-                <div className="font-bold text-xl">{ticketPrice}TL</div>
+                <div className="font-bold text-xl">{ticketPrice}</div>
             </div>
 
             {/* Bus info and Checkout Button */}
@@ -41,7 +42,9 @@ const TicketCardDetail = ({ departureTime, tripTime, arrivalTime, departureLocat
                 </div>
 
                 <div className="flex">
+                    <Link to={"/checkout"}> 
                     <MUIButton label={"Devam Et"} />
+                    </Link>
                 </div>
 
             </div>

@@ -43,9 +43,9 @@ const TicketInputForm = ({ children }) => {
 
     const onSubmit = () => {
         const formattedDate = date.format(dateFormatType);
-        alert(`The date is ${formattedDate}`);
-        alert(`The Arrival City is: ${arrivalCity}`);
-        alert(`The Departure City is: ${departureCity}`);
+        //alert(`The date is ${formattedDate}`);
+        //alert(`The Arrival City is: ${arrivalCity}`);
+        //alert(`The Departure City is: ${departureCity}`);
         navigate(`/search?date=${formattedDate}&departureCity=${departureCity}&arrivalCity=${arrivalCity}&passengers=${passengerCount}`);
     };
 

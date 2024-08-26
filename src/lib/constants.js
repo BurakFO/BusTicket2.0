@@ -207,3 +207,118 @@ export const positions = [
     "Çağrı Merkezi Personeli",
     "Peron Kontrol Görevlisi"
 ]
+
+export const ticketData = [
+    {
+        departureTime: "11:45",
+        tripTime: "6:30 saat",
+        arrivalTime: "18:30",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Ankara-Otogar",
+        ticketPrice: "450TL"
+    },
+    {
+        departureTime: "08:00",
+        tripTime: "5:45 saat",
+        arrivalTime: "13:45",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Bursa-Otogar",
+        ticketPrice: "300TL"
+    },
+    {
+        departureTime: "14:15",
+        tripTime: "7:00 saat",
+        arrivalTime: "21:15",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "İzmir-Otogar",
+        ticketPrice: "500TL"
+    },
+    {
+        departureTime: "09:30",
+        tripTime: "10:00 saat",
+        arrivalTime: "19:30",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Antalya-Otogar",
+        ticketPrice: "600TL"
+    },
+    {
+        departureTime: "23:00",
+        tripTime: "6:30 saat",
+        arrivalTime: "05:30",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Ankara-Otogar",
+        ticketPrice: "450TL"
+    },
+    {
+        departureTime: "15:00",
+        tripTime: "7:30 saat",
+        arrivalTime: "22:30",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Adana-Otogar",
+        ticketPrice: "550TL"
+    },
+    {
+        departureTime: "12:00",
+        tripTime: "8:00 saat",
+        arrivalTime: "20:00",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Gaziantep-Otogar",
+        ticketPrice: "700TL"
+    },
+    {
+        departureTime: "10:00",
+        tripTime: "6:15 saat",
+        arrivalTime: "16:15",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Konya-Otogar",
+        ticketPrice: "400TL"
+    },
+    {
+        departureTime: "21:30",
+        tripTime: "9:30 saat",
+        arrivalTime: "07:00",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Kayseri-Otogar",
+        ticketPrice: "650TL"
+    },
+    {
+        departureTime: "17:00",
+        tripTime: "6:00 saat",
+        arrivalTime: "23:00",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Eskişehir-Otogar",
+        ticketPrice: "350TL"
+    },
+    {
+        departureTime: "05:30",
+        tripTime: "8:15 saat",
+        arrivalTime: "13:45",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Mersin-Otogar",
+        ticketPrice: "600TL"
+    },
+    {
+        departureTime: "19:45",
+        tripTime: "5:00 saat",
+        arrivalTime: "00:45",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Kocaeli-Otogar",
+        ticketPrice: "250TL"
+    },
+    {
+        departureTime: "13:00",
+        tripTime: "9:00 saat",
+        arrivalTime: "22:00",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Diyarbakır-Otogar",
+        ticketPrice: "800TL"
+    },
+    {
+        departureTime: "16:15",
+        tripTime: "7:45 saat",
+        arrivalTime: "00:00",
+        departureLocation: "İstanbul-Alibeyköy",
+        arrivalLocation: "Şanlıurfa-Otogar",
+        ticketPrice: "750TL"
+    }
+];
